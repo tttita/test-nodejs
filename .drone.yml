@@ -21,3 +21,15 @@ pipeline:
     commands:
       - yarn run lint
       - sleep 5
+  scp:
+    image: appleboy/drone-scp
+    host: 3.134.227.207
+    port: 8080
+    username: centos
+    target: /data/drone/test/drone-nodejs-example
+    secrets: [ ssh_key ]
+    source:
+      - "*.js"  
+      - node_modules
+    when:
+      branch: master
