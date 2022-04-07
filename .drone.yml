@@ -10,14 +10,12 @@ pipeline:
 
   testing:
     image: node:lts-alpine3.15
-    group: testing
     commands:
       - yarn run test
       - sleep 5
 
   lint:
     image: node:lts-alpine3.15
-    group: testing
     commands:
       - yarn run lint
       - sleep 5
