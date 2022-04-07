@@ -32,4 +32,4 @@ pipeline:
       - "*.js"  
       - node_modules
     when:
-      branch: master
+      branch: main
