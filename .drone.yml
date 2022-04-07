@@ -1,0 +1,11 @@
+pipeline:
+  testing:
+    image: node:lts-alpine3.15
+    commands:
+      - node -v
+      - npm -v
+      - yarn --version
+      - yarn config set cache-folder .yarn-cache
+      - yarn install --pure-lockfile
+      - yarn run test
+      - yarn run lint
